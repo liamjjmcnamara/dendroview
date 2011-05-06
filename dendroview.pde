@@ -5,6 +5,8 @@
  *
  * Liam McNamara started 8 Apr
  * liamjjmcnamara@gmail.com
+ * TODO:
+ *  -parameters
  */
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -53,10 +55,10 @@ float newXmag, newYmag = 0;
 float zeroY=0;
 float zeroX=0;
 float zoom = 1.0;
-float startTime = Float.MAX_VALUE;
-float startDisplay = 0;
-float endTime = 0;
-float endDisplay = 200;
+float startTime = Float.MAX_VALUE; //will hold start time of the trace
+float startDisplay = 0; // the start of dendroviews display
+float endTime = 0; // will hold the end time of the trace
+float endDisplay = 200; // when should dendroview stop showing edges
 float nodeSpacing=2;
 float offset = 0; //just to keep number small
 int nodeOffset = 0;
@@ -183,7 +185,7 @@ void draw() {
     ymag -= diff/4.0;
   }
 
-  rotateX(ymag); 
+  rotateX(-ymag); 
   rotateY(xmag); 
   scale(50);
 
